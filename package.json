@@ -4,15 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "tauri dev",
+    "build:intel": "tauri build --target x86_64-apple-darwin",
+    "build:silicon": "tauri build --target aarch64-apple-darwin",
+    "build": "pnpm build:intel && pnpm build:silicon",
     "next-dev": "next dev",
     "next-build": "next build",
     "next-start": "next start",
     "next-lint": "next lint"
   },
   "dependencies": {
+    "@tauri-apps/api": "1.5.3",
     "next": "14.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store#v1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "1.5.11",
