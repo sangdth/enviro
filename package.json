@@ -4,22 +4,30 @@
   "private": true,
   "scripts": {
     "dev": "tauri dev",
+    "ui:add": "pnpm dlx shadcn-ui@latest add",
+    "ui:diff": "pnpm dlx shadcn-ui@latest diff",
     "build:intel": "tauri build --target x86_64-apple-darwin",
     "build:silicon": "tauri build --target aarch64-apple-darwin",
     "build": "pnpm build:intel && pnpm build:silicon",
     "clean": "rimraf dist out node_modules .next && pnpm i",
-    "next-dev": "next dev",
+    "next-dev": "next dev --turbo",
     "next-build": "next build",
     "next-start": "next start",
     "next-lint": "next lint",
     "tauri": "tauri"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
     "@tauri-apps/api": ">=2.0.0-beta.0",
     "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.0",
+    "lucide-react": "0.372.0",
     "next": "14.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwind-merge": "2.3.0",
+    "tailwindcss-animate": "1.0.7",
     "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store#v2"
   },
   "devDependencies": {
