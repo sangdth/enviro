@@ -13,7 +13,8 @@
     "next-dev": "next dev --turbo",
     "next-build": "next build",
     "next-start": "next start",
-    "next-lint": "next lint",
+    "next-lint": "eslint ./ --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
     "tauri": "tauri"
   },
   "dependencies": {
@@ -35,11 +36,17 @@
     "@types/node": "20.12.2",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.23",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
     "eslint": "8.56.0",
     "eslint-config-next": "14.2.2",
+    "eslint-config-prettier": "9.1.0",
     "postcss": "8.4.38",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "0.5.14",
     "rimraf": "5.0.5",
     "tailwindcss": "3.4.3",
-    "typescript": "5.4.3"
+    "typescript": "5.4.3",
+    "typescript-eslint": "7.7.0"
   }
 }
