@@ -15,7 +15,7 @@ const textVariants = cva('font-sans antialiased tracking-normal', {
     },
     variant: {
       normal: 'text-slate-500 dark:text-slate-400',
-      muted: 'text-muted-foreground',
+      muted: 'text-muted-foreground line-clamp-1',
     },
   },
   defaultVariants: {

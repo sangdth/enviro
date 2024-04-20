@@ -1,12 +1,19 @@
-import { readDir, BaseDirectory, DirEntry } from '@tauri-apps/plugin-fs';
+import {
+  exists,
+  readDir,
+  BaseDirectory,
+  DirEntry,
+} from '@tauri-apps/plugin-fs';
 import { open } from '@tauri-apps/plugin-dialog';
 import { Button, Text } from '@/components/ui';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // type SelectProjectProps = {}
 
 export const SelectProject = () => {
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
+
+  const [isValidProject, setValidProject] = useState(false);
 
   const handleSelectFolder = async () => {
     const dirPath = await open({
@@ -22,6 +29,9 @@ export const SelectProject = () => {
       return;
     }
 
+    const isNodeProject = await exists(`${dirPath}/package.json`);
+    console.log('### isNodeProject: ', { isNodeProject });
+
     setSelectedPath(dirPath);
 
     const entries = await readDir(dirPath);
@@ -35,9 +45,13 @@ export const SelectProject = () => {
     }
   };
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-1">
       <Button onClick={handleSelectFolder}>Select Project</Button>
-      {selectedPath && <Text variant="muted">{selectedPath}</Text>}
+      {selectedPath && (
+        <Text variant="muted" size="xs">
+          {selectedPath}
+        </Text>
+      )}
     </div>
   );
 };
