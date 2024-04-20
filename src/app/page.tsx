@@ -3,7 +3,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/components/ui';
-import { SelectProject } from '@/components/features';
+import { FileTree, SelectProject } from '@/components/features';
 
 export default function Home() {
   return (
@@ -13,8 +13,9 @@ export default function Home() {
         direction="horizontal"
       >
         <ResizablePanel defaultSize={25}>
-          <div className="flex h-full items-center justify-center p-6">
+          <div className="flex h-full flex-col items-center justify-center p-6">
             <SelectProject />
+            <FileTree />
           </div>
         </ResizablePanel>
         <ResizableHandle />

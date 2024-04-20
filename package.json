@@ -10,6 +10,7 @@
     "build:silicon": "tauri build --target aarch64-apple-darwin",
     "build": "pnpm build:intel && pnpm build:silicon",
     "clean": "rimraf dist out node_modules .next && pnpm i",
+    "format": "prettier --ignore-unknown --write",
     "next-dev": "next dev --turbo",
     "next-build": "next build",
     "next-start": "next start",
@@ -18,6 +19,10 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@dnd-kit/core": "6.1.0",
+    "@dnd-kit/modifiers": "7.0.0",
+    "@dnd-kit/sortable": "8.0.0",
+    "@dnd-kit/utilities": "3.2.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@tauri-apps/api": ">=2.0.0-beta.0",
     "@tauri-apps/plugin-dialog": "2.0.0-beta.2",
