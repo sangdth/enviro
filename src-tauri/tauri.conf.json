@@ -11,9 +11,10 @@
   "app": {
     "windows": [
       {
-        "title": "enviro",
+        "title": "",
         "width": 900,
-        "height": 640
+        "height": 640,
+        "titleBarStyle": "Overlay"
       }
     ],
     "security": {
