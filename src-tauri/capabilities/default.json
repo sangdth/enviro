@@ -22,7 +22,7 @@
     },
     {
       "identifier": "fs:scope",
-      "allow": [{ "path": "$APPDATA" }, { "path": "$APPDATA/**" }]
+      "allow": [{ "path": "$APPDATA/**" }]
     },
     "store:allow-entries",
     "store:allow-get",
