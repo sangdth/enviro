@@ -19,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'relative')}>
+      <body
+        className={cn(
+          inter.className,
+          'relative bg-white text-slate-700 dark:bg-slate-700 dark:text-neutral-50'
+        )}
+      >
         <TopBar />
         {children}
       </body>
